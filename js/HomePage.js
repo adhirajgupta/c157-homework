@@ -1,8 +1,7 @@
 AFRAME.registerComponent('tour', {
 
     init: function () {
-        this.hereos = this.el;
-        console.log(this.el)
+        this.placesContainer = this.el;
         this.createCards()
     },
     createCards: function () {
@@ -47,7 +46,7 @@ AFRAME.registerComponent('tour', {
 
             borderEl.appendChild(Thumbnail)
             borderEl.appendChild(Title)
-            this.hereos.appendChild(borderEl);
+            this.placesContainer.appendChild(borderEl);
 
         }
     },
@@ -60,7 +59,7 @@ AFRAME.registerComponent('tour', {
             z: position.z,
         })
         entity.setAttribute('material', {
-            color: "#fff",
+            color: "#0077cc",
             opacity: 1
         })
         entity.setAttribute('id', id)
@@ -69,8 +68,6 @@ AFRAME.registerComponent('tour', {
             radiusInner: 9,
             radiusOuter: 10
         })
-        entity.setAttribute("cursor-events",{})
-
         return entity
     },
     createThumbnail: function (item) {
